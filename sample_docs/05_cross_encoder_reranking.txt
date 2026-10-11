@@ -1,0 +1,16 @@
+Cross-Encoder Reranking for Precision Retrieval
+
+While bi-encoders generate separate embeddings for queries and documents to facilitate fast nearest-neighbor search, they cannot capture fine-grained token-level cross-attention between query terms and document passages. Cross-encoders overcome this representational bottleneck.
+
+In a cross-encoder architecture, the query and passage are concatenated into a single input sequence separated by special tokens:
+Input = [CLS] Query [SEP] Passage [SEP]
+
+This joint sequence is fed into a full Transformer encoder, allowing self-attention layers to interact across all query tokens and document tokens simultaneously. The [CLS] token representation is then mapped via a classification head to a scalar relevance score. State-of-the-art models like cross-encoder/ms-marco-MiniLM-L-6-v2 are pretrained on large-scale passage ranking benchmarks such as MS MARCO to deliver high accuracy.
+
+Because cross-encoders require full forward passes over every query-passage pair at inference time, their computational complexity is O(N) with respect to candidate passages. Scoring millions of passages with a cross-encoder would result in unacceptable query latency.
+
+Therefore, modern IR architectures adopt a two-stage retrieval pipeline:
+- First Stage (Candidate Generation): High-throughput retrieval (BM25, Dense bi-encoder, or Hybrid RRF) retrieves a candidate subset of top-k passages (typically k = 20 to 50) from millions of documents in milliseconds.
+- Second Stage (Precision Reranking): The computationally intensive cross-encoder reranks only the top-k candidates, reordering them based on deep contextual interaction.
+
+This two-stage design provides the optimal compromise between retrieval latency and relevance precision.

@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Hugging Face and Torch caches
+.cache/
+hf_cache/
+models/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Environment variables and secrets
+.env
+.env.*
+*.pem
+*.key
+.streamlit/secrets.toml
+
+# Logs and temporary files
+*.log
+~$*.docx
+~$*.xlsx
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

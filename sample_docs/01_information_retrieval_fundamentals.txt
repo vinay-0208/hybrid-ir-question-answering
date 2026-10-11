@@ -1,0 +1,13 @@
+Information Retrieval Fundamentals and Evaluation
+
+Information Retrieval (IR) is the science of searching for documents, information within documents, and metadata about documents within large collections of unstructured text. Traditional IR systems organize unstructured text using inverted indexes, which map distinct terms to the lists of documents or passages containing those terms.
+
+The standard information retrieval lifecycle consists of an offline indexing phase and an online query execution phase. During the offline phase, documents undergo text normalization, tokenization, stop-word filtering, and passage segmentation. These processed tokens are then structured into high-performance search indices. In the online phase, a user inputs a natural language query, which is parsed and matched against the index to return an ordered set of relevant candidates.
+
+Evaluating retrieval effectiveness requires standardized metrics:
+1. Precision at k (P@k): Measures the proportion of retrieved documents in the top-k results that are relevant to the query.
+2. Recall at k (R@k): Measures the proportion of all relevant documents in the corpus that are successfully retrieved within the top-k results.
+3. Mean Reciprocal Rank (MRR): Evaluates the reciprocal rank of the first relevant document across a set of queries, reflecting how quickly a user finds their first useful answer.
+4. Normalized Discounted Cumulative Gain (NDCG@k): Assesses graded relevance, rewarding relevant documents that appear higher in the result ranking by logarithmically discounting lower positions.
+
+Operational efficiency in modern search engines is measured by query processing latency, throughput, and index memory footprint. Modern IR systems balance retrieval depth and ranking accuracy through multi-stage architectures.

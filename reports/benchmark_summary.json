@@ -1,0 +1,1036 @@
+{
+  "summary": [
+    {
+      "Retrieval Mode": "1. BM25 Only",
+      "Precision@5": 0.18,
+      "Recall@5": 0.9,
+      "MRR": 0.85,
+      "NDCG@5": 0.863,
+      "Exact Match": 0.2,
+      "Token F1": 0.433,
+      "Faithfulness": 1.0,
+      "Answer Relevance": 0.674,
+      "Context Precision": 0.85,
+      "Context Recall": 0.949,
+      "Avg Latency (ms)": 222.07
+    },
+    {
+      "Retrieval Mode": "2. Dense Only (FAISS)",
+      "Precision@5": 0.18,
+      "Recall@5": 0.9,
+      "MRR": 0.77,
+      "NDCG@5": 0.802,
+      "Exact Match": 0.2,
+      "Token F1": 0.373,
+      "Faithfulness": 1.0,
+      "Answer Relevance": 0.629,
+      "Context Precision": 0.77,
+      "Context Recall": 0.902,
+      "Avg Latency (ms)": 224.09
+    },
+    {
+      "Retrieval Mode": "3. Hybrid (RRF)",
+      "Precision@5": 0.16,
+      "Recall@5": 0.8,
+      "MRR": 0.75,
+      "NDCG@5": 0.763,
+      "Exact Match": 0.2,
+      "Token F1": 0.373,
+      "Faithfulness": 1.0,
+      "Answer Relevance": 0.662,
+      "Context Precision": 0.75,
+      "Context Recall": 0.882,
+      "Avg Latency (ms)": 239.55
+    },
+    {
+      "Retrieval Mode": "4. Hybrid + Cross-Encoder",
+      "Precision@5": 0.2,
+      "Recall@5": 1.0,
+      "MRR": 0.875,
+      "NDCG@5": 0.906,
+      "Exact Match": 0.2,
+      "Token F1": 0.383,
+      "Faithfulness": 1.0,
+      "Answer Relevance": 0.667,
+      "Context Precision": 0.875,
+      "Context Recall": 0.969,
+      "Avg Latency (ms)": 627.86
+    },
+    {
+      "Retrieval Mode": "5. Heuristic ReAct + HyDE + Rerank",
+      "Precision@5": 0.2,
+      "Recall@5": 1.0,
+      "MRR": 0.95,
+      "NDCG@5": 0.963,
+      "Exact Match": 0.3,
+      "Token F1": 0.543,
+      "Faithfulness": 1.0,
+      "Answer Relevance": 0.658,
+      "Context Precision": 0.95,
+      "Context Recall": 0.969,
+      "Avg Latency (ms)": 674.65
+    }
+  ],
+  "details": {
+    "bm25_only": [
+      {
+        "question_id": "q1",
+        "question": "What is the Okapi BM25 algorithm?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.667,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.633,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 167.12
+      },
+      {
+        "question_id": "q2",
+        "question": "What problem does dense semantic retrieval solve that BM25 struggles with?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p1",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "em": 0.0,
+        "f1": 0.5,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.693,
+        "context_precision": 0.0,
+        "context_recall": 0.8,
+        "latency_ms": 209.75
+      },
+      {
+        "question_id": "q3",
+        "question": "How does Reciprocal Rank Fusion calculate the score for a document?",
+        "target_ids": [
+          "04_hybrid_retrieval_and_fusion.txt_p1"
+        ],
+        "retrieved_top1": "04_hybrid_retrieval_and_fusion.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.657,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 246.79
+      },
+      {
+        "question_id": "q4",
+        "question": "Why is a two-stage retrieval pipeline used with cross-encoders?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p1"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.1,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.682,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 262.89
+      },
+      {
+        "question_id": "q5",
+        "question": "What is the role of parameter k1 in BM25?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.631,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.556,
+        "context_precision": 0.5,
+        "context_recall": 0.857,
+        "latency_ms": 266.69
+      },
+      {
+        "question_id": "q6",
+        "question": "What geometric metric is most commonly used for dense semantic retrieval?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p1"
+        ],
+        "retrieved_top1": "03_dense_embeddings_and_semantic_search.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.713,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 158.93
+      },
+      {
+        "question_id": "q7",
+        "question": "What does Mean Reciprocal Rank (MRR) evaluate?",
+        "target_ids": [
+          "01_information_retrieval_fundamentals.txt_p1"
+        ],
+        "retrieved_top1": "01_information_retrieval_fundamentals.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.462,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.797,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 265.31
+      },
+      {
+        "question_id": "q8",
+        "question": "What input format does a cross-encoder use to process a query and passage?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p0"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.622,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 254.77
+      },
+      {
+        "question_id": "q9",
+        "question": "How do extractive question answering models identify answers?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p0"
+        ],
+        "retrieved_top1": "06_question_answering_and_rag.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.71,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 247.46
+      },
+      {
+        "question_id": "q10",
+        "question": "What should a QA system do when retrieval similarity scores are too low?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p1"
+        ],
+        "retrieved_top1": "06_question_answering_and_rag.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.6,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.68,
+        "context_precision": 1.0,
+        "context_recall": 0.833,
+        "latency_ms": 141.03
+      }
+    ],
+    "dense_only": [
+      {
+        "question_id": "q1",
+        "question": "What is the Okapi BM25 algorithm?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.667,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.653,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 245.37
+      },
+      {
+        "question_id": "q2",
+        "question": "What problem does dense semantic retrieval solve that BM25 struggles with?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.2,
+        "ndcg_at_k": 0.387,
+        "em": 0.0,
+        "f1": 0.5,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.602,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "latency_ms": 225.26
+      },
+      {
+        "question_id": "q3",
+        "question": "How does Reciprocal Rank Fusion calculate the score for a document?",
+        "target_ids": [
+          "04_hybrid_retrieval_and_fusion.txt_p1"
+        ],
+        "retrieved_top1": "04_hybrid_retrieval_and_fusion.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.592,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 252.52
+      },
+      {
+        "question_id": "q4",
+        "question": "Why is a two-stage retrieval pipeline used with cross-encoders?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p1"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.1,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.68,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 193.84
+      },
+      {
+        "question_id": "q5",
+        "question": "What is the role of parameter k1 in BM25?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.631,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.556,
+        "context_precision": 0.5,
+        "context_recall": 0.857,
+        "latency_ms": 231.8
+      },
+      {
+        "question_id": "q6",
+        "question": "What geometric metric is most commonly used for dense semantic retrieval?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p1"
+        ],
+        "retrieved_top1": "03_dense_embeddings_and_semantic_search.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.677,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 221.78
+      },
+      {
+        "question_id": "q7",
+        "question": "What does Mean Reciprocal Rank (MRR) evaluate?",
+        "target_ids": [
+          "01_information_retrieval_fundamentals.txt_p1"
+        ],
+        "retrieved_top1": "01_information_retrieval_fundamentals.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.462,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.797,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 254.23
+      },
+      {
+        "question_id": "q8",
+        "question": "What input format does a cross-encoder use to process a query and passage?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p0"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.671,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 229.03
+      },
+      {
+        "question_id": "q9",
+        "question": "How do extractive question answering models identify answers?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p0"
+        ],
+        "retrieved_top1": "06_question_answering_and_rag.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.71,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 182.66
+      },
+      {
+        "question_id": "q10",
+        "question": "What should a QA system do when retrieval similarity scores are too low?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p1"
+        ],
+        "retrieved_top1": "04_hybrid_retrieval_and_fusion.txt_p0",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.352,
+        "context_precision": 0.0,
+        "context_recall": 0.167,
+        "latency_ms": 204.43
+      }
+    ],
+    "hybrid_rrf": [
+      {
+        "question_id": "q1",
+        "question": "What is the Okapi BM25 algorithm?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.667,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.653,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 346.1
+      },
+      {
+        "question_id": "q2",
+        "question": "What problem does dense semantic retrieval solve that BM25 struggles with?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p1",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "em": 0.0,
+        "f1": 0.5,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.683,
+        "context_precision": 0.0,
+        "context_recall": 0.8,
+        "latency_ms": 251.86
+      },
+      {
+        "question_id": "q3",
+        "question": "How does Reciprocal Rank Fusion calculate the score for a document?",
+        "target_ids": [
+          "04_hybrid_retrieval_and_fusion.txt_p1"
+        ],
+        "retrieved_top1": "04_hybrid_retrieval_and_fusion.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.657,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 229.44
+      },
+      {
+        "question_id": "q4",
+        "question": "Why is a two-stage retrieval pipeline used with cross-encoders?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p1"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.1,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.682,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 194.7
+      },
+      {
+        "question_id": "q5",
+        "question": "What is the role of parameter k1 in BM25?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.631,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.556,
+        "context_precision": 0.5,
+        "context_recall": 0.857,
+        "latency_ms": 224.28
+      },
+      {
+        "question_id": "q6",
+        "question": "What geometric metric is most commonly used for dense semantic retrieval?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p1"
+        ],
+        "retrieved_top1": "03_dense_embeddings_and_semantic_search.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.713,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 209.81
+      },
+      {
+        "question_id": "q7",
+        "question": "What does Mean Reciprocal Rank (MRR) evaluate?",
+        "target_ids": [
+          "01_information_retrieval_fundamentals.txt_p1"
+        ],
+        "retrieved_top1": "01_information_retrieval_fundamentals.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.462,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.797,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 178.07
+      },
+      {
+        "question_id": "q8",
+        "question": "What input format does a cross-encoder use to process a query and passage?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p0"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.671,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 300.52
+      },
+      {
+        "question_id": "q9",
+        "question": "How do extractive question answering models identify answers?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p0"
+        ],
+        "retrieved_top1": "06_question_answering_and_rag.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.71,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 232.91
+      },
+      {
+        "question_id": "q10",
+        "question": "What should a QA system do when retrieval similarity scores are too low?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p1"
+        ],
+        "retrieved_top1": "04_hybrid_retrieval_and_fusion.txt_p0",
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.494,
+        "context_precision": 0.0,
+        "context_recall": 0.167,
+        "latency_ms": 227.82
+      }
+    ],
+    "hybrid_rerank": [
+      {
+        "question_id": "q1",
+        "question": "What is the Okapi BM25 algorithm?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.667,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.644,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 689.44
+      },
+      {
+        "question_id": "q2",
+        "question": "What problem does dense semantic retrieval solve that BM25 struggles with?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p0"
+        ],
+        "retrieved_top1": "04_hybrid_retrieval_and_fusion.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.25,
+        "ndcg_at_k": 0.431,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.557,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "latency_ms": 613.72
+      },
+      {
+        "question_id": "q3",
+        "question": "How does Reciprocal Rank Fusion calculate the score for a document?",
+        "target_ids": [
+          "04_hybrid_retrieval_and_fusion.txt_p1"
+        ],
+        "retrieved_top1": "04_hybrid_retrieval_and_fusion.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.657,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 691.35
+      },
+      {
+        "question_id": "q4",
+        "question": "Why is a two-stage retrieval pipeline used with cross-encoders?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p1"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.1,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.68,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 569.91
+      },
+      {
+        "question_id": "q5",
+        "question": "What is the role of parameter k1 in BM25?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.631,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.556,
+        "context_precision": 0.5,
+        "context_recall": 0.857,
+        "latency_ms": 610.17
+      },
+      {
+        "question_id": "q6",
+        "question": "What geometric metric is most commonly used for dense semantic retrieval?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p1"
+        ],
+        "retrieved_top1": "03_dense_embeddings_and_semantic_search.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.677,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 603.43
+      },
+      {
+        "question_id": "q7",
+        "question": "What does Mean Reciprocal Rank (MRR) evaluate?",
+        "target_ids": [
+          "01_information_retrieval_fundamentals.txt_p1"
+        ],
+        "retrieved_top1": "01_information_retrieval_fundamentals.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.462,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.797,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 611.3
+      },
+      {
+        "question_id": "q8",
+        "question": "What input format does a cross-encoder use to process a query and passage?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p0"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.671,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 632.31
+      },
+      {
+        "question_id": "q9",
+        "question": "How do extractive question answering models identify answers?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p0"
+        ],
+        "retrieved_top1": "06_question_answering_and_rag.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.71,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 654.64
+      },
+      {
+        "question_id": "q10",
+        "question": "What should a QA system do when retrieval similarity scores are too low?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p1"
+        ],
+        "retrieved_top1": "06_question_answering_and_rag.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.6,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.722,
+        "context_precision": 1.0,
+        "context_recall": 0.833,
+        "latency_ms": 602.33
+      }
+    ],
+    "agentic_hyde_rerank": [
+      {
+        "question_id": "q1",
+        "question": "What is the Okapi BM25 algorithm?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.667,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.679,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 623.25
+      },
+      {
+        "question_id": "q2",
+        "question": "What problem does dense semantic retrieval solve that BM25 struggles with?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p0"
+        ],
+        "retrieved_top1": "03_dense_embeddings_and_semantic_search.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.588,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 678.45
+      },
+      {
+        "question_id": "q3",
+        "question": "How does Reciprocal Rank Fusion calculate the score for a document?",
+        "target_ids": [
+          "04_hybrid_retrieval_and_fusion.txt_p1"
+        ],
+        "retrieved_top1": "04_hybrid_retrieval_and_fusion.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.592,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 715.81
+      },
+      {
+        "question_id": "q4",
+        "question": "Why is a two-stage retrieval pipeline used with cross-encoders?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p1"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.1,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.68,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 618.9
+      },
+      {
+        "question_id": "q5",
+        "question": "What is the role of parameter k1 in BM25?",
+        "target_ids": [
+          "02_lexical_search_and_bm25.txt_p0"
+        ],
+        "retrieved_top1": "02_lexical_search_and_bm25.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.6,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.539,
+        "context_precision": 1.0,
+        "context_recall": 0.857,
+        "latency_ms": 788.81
+      },
+      {
+        "question_id": "q6",
+        "question": "What geometric metric is most commonly used for dense semantic retrieval?",
+        "target_ids": [
+          "03_dense_embeddings_and_semantic_search.txt_p1"
+        ],
+        "retrieved_top1": "03_dense_embeddings_and_semantic_search.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.631,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.606,
+        "context_precision": 0.5,
+        "context_recall": 1.0,
+        "latency_ms": 670.38
+      },
+      {
+        "question_id": "q7",
+        "question": "What does Mean Reciprocal Rank (MRR) evaluate?",
+        "target_ids": [
+          "01_information_retrieval_fundamentals.txt_p1"
+        ],
+        "retrieved_top1": "01_information_retrieval_fundamentals.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.462,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.797,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 664.11
+      },
+      {
+        "question_id": "q8",
+        "question": "What input format does a cross-encoder use to process a query and passage?",
+        "target_ids": [
+          "05_cross_encoder_reranking.txt_p0"
+        ],
+        "retrieved_top1": "05_cross_encoder_reranking.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.671,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 744.12
+      },
+      {
+        "question_id": "q9",
+        "question": "How do extractive question answering models identify answers?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p0"
+        ],
+        "retrieved_top1": "06_question_answering_and_rag.txt_p0",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 1.0,
+        "f1": 1.0,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.71,
+        "context_precision": 1.0,
+        "context_recall": 1.0,
+        "latency_ms": 656.42
+      },
+      {
+        "question_id": "q10",
+        "question": "What should a QA system do when retrieval similarity scores are too low?",
+        "target_ids": [
+          "06_question_answering_and_rag.txt_p1"
+        ],
+        "retrieved_top1": "06_question_answering_and_rag.txt_p1",
+        "precision_at_k": 0.2,
+        "recall_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "em": 0.0,
+        "f1": 0.6,
+        "faithfulness": 1.0,
+        "answer_relevance": 0.722,
+        "context_precision": 1.0,
+        "context_recall": 0.833,
+        "latency_ms": 586.28
+      }
+    ]
+  }
+}

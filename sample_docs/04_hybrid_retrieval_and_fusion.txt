@@ -1,0 +1,20 @@
+Hybrid Retrieval and Candidate Fusion Techniques
+
+Neither lexical retrieval nor dense semantic retrieval is sufficient on its own for all real-world query modalities. Lexical search excels at precise keywords and domain-specific terminology, while semantic search excels at conceptual exploration and synonymy. Hybrid retrieval combines both modalities to achieve superior retrieval recall and precision.
+
+A major challenge in hybrid retrieval is ranking score incompatibility. BM25 scores are unbounded positive numbers (ranging from 0 to over 30 depending on document length and term frequency), while dense cosine similarity scores range strictly between -1.0 and 1.0 (or 0.0 to 1.0). Naively adding or multiplying these raw scores skews the output and invalidates ranking integrity.
+
+To resolve score incompatibility, two primary candidate fusion techniques are applied:
+1. Reciprocal Rank Fusion (RRF):
+RRF is an unsupervised, parameter-free rank-based fusion algorithm that relies solely on relative ranks rather than volatile raw scores. For a document d appearing in rankings across retrieval methods M, the RRF score is computed as:
+RRF_Score(d) = Sum for each method m in M of 1.0 / (k_rrf + rank_m(d))
+The smoothing parameter k_rrf (conventionally set to 60) prevents top-ranked outliers from dominating the fused ranking and provides robust balance.
+
+2. Normalized Score Fusion (Convex Combination):
+Raw scores from BM25 and Dense search are individually scaled to the interval [0, 1] using min-max normalization:
+Norm_Score = (Score - Min_Score) / (Max_Score - Min_Score)
+The hybrid score is then computed via weighted interpolation:
+Hybrid_Score(d) = alpha * BM25_norm(d) + (1 - alpha) * Dense_norm(d)
+Where alpha (typically 0.4 to 0.6) controls the relative importance of lexical versus semantic signals.
+
+Hybrid fusion reliably outperforms individual retrieval pipelines across heterogeneous corpora by uniting lexical precision with semantic breadth.

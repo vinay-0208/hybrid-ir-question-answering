@@ -1,0 +1,6 @@
+Retrieval Mode,Precision@5,Recall@5,MRR,NDCG@5,Exact Match,Token F1,Faithfulness,Answer Relevance,Context Precision,Context Recall,Avg Latency (ms)
+1. BM25 Only,0.18,0.9,0.85,0.863,0.2,0.433,1.0,0.674,0.85,0.949,222.07
+2. Dense Only (FAISS),0.18,0.9,0.77,0.802,0.2,0.373,1.0,0.629,0.77,0.902,224.09
+3. Hybrid (RRF),0.16,0.8,0.75,0.763,0.2,0.373,1.0,0.662,0.75,0.882,239.55
+4. Hybrid + Cross-Encoder,0.2,1.0,0.875,0.906,0.2,0.383,1.0,0.667,0.875,0.969,627.86
+5. Heuristic ReAct + HyDE + Rerank,0.2,1.0,0.95,0.963,0.3,0.543,1.0,0.658,0.95,0.969,674.65

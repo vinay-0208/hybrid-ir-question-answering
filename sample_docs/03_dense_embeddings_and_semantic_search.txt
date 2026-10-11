@@ -1,0 +1,14 @@
+Dense Embeddings and Transformer-Based Semantic Search
+
+Dense semantic retrieval represents queries and text passages as continuous low-dimensional vectors in a shared latent geometric space. By mapping text into continuous representations, semantic search overcomes the vocabulary mismatch limitation of lexical retrieval.
+
+In modern systems, dense representations are generated using bi-encoder architectures powered by pretrained Transformer encoders, such as Sentence-BERT (SBERT) and MiniLM models like sentence-transformers/all-MiniLM-L6-v2. The bi-encoder independently computes vector embeddings:
+- Passage vector: v_d = Encoder(D)
+- Query vector: v_q = Encoder(Q)
+
+Because the encoder is applied independently to documents during offline indexing, passage embeddings can be precalculated and stored in high-dimensional vector spaces. At online query time, only the query vector is computed in real time. Relevance is then calculated using geometric distance or similarity metrics, most commonly Cosine Similarity:
+Cosine_Similarity(v_q, v_d) = (v_q . v_d) / (||v_q|| * ||v_d||)
+
+When vectors are L2-normalized during embedding generation, cosine similarity reduces to a fast dot product.
+
+Dense retrieval excels at semantic abstraction, capturing synonyms, thematic context, conceptual relationships, and multilingual meanings. However, dense retrieval can occasionally miss exact keyword specifications, rare names, code identifiers, or alphanumeric tokens that have not been adequately represented in the pretraining corpus.

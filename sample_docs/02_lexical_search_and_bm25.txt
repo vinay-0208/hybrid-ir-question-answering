@@ -1,0 +1,13 @@
+Lexical Search and the Okapi BM25 Ranking Function
+
+Lexical search relies on exact token and keyword matching between a user query and indexed document passages. The Okapi BM25 algorithm is an established probabilistic information retrieval model that improves upon classical TF-IDF (Term Frequency-Inverse Document Frequency) weighting.
+
+BM25 scores passage relevance using three primary components:
+1. Inverse Document Frequency (IDF): Penalizes terms that appear frequently across the entire corpus, giving higher discriminative weight to rare, informative vocabulary.
+2. Term Frequency Saturation: Unlike raw term frequency, which grows linearly, BM25 incorporates a non-linear saturation curve governed by the parameter k1 (typically between 1.2 and 2.0). As a term appears repeatedly in a single passage, its marginal contribution to the relevance score asymptotically levels off.
+3. Document Length Normalization: Controlled by the parameter b (typically set to 0.75), this mechanism penalizes long passages that contain many words while rewarding concise passages that contain the query terms in higher density. The passage length is compared relative to the average passage length across the corpus.
+
+The mathematical formulation for BM25 score of a document D given query Q is:
+Score(D, Q) = Sum for each term t in Q of IDF(t) * (f(t, D) * (k1 + 1)) / (f(t, D) + k1 * (1 - b + b * (|D| / avgdl)))
+
+While BM25 remains fast, scalable, and resilient for keyword lookups, part numbers, and exact technical terminology, it suffers from the vocabulary mismatch problem. When users formulate queries using synonyms, colloquialisms, or conceptual rephrasings that do not share exact lexical tokens with the indexed text, BM25 fails to retrieve the relevant passages.

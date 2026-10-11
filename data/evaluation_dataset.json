@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the Okapi BM25 algorithm?",
+    "relevant_doc": "02_lexical_search_and_bm25.txt",
+    "relevant_passage_ids": ["02_lexical_search_and_bm25.txt_p0"],
+    "relevant_keywords": ["okapi", "bm25", "probabilistic", "information", "retrieval"],
+    "ground_truth_answer": "an established probabilistic information retrieval model that improves upon classical TF-IDF",
+    "ground_truth_evidence": "The Okapi BM25 algorithm is an established probabilistic information retrieval model that improves upon classical TF-IDF (Term Frequency-Inverse Document Frequency) weighting."
+  },
+  {
+    "id": "q2",
+    "question": "What problem does dense semantic retrieval solve that BM25 struggles with?",
+    "relevant_doc": "03_dense_embeddings_and_semantic_search.txt",
+    "relevant_passage_ids": ["03_dense_embeddings_and_semantic_search.txt_p0"],
+    "relevant_keywords": ["vocabulary", "mismatch", "dense", "semantic"],
+    "ground_truth_answer": "the vocabulary mismatch limitation of lexical retrieval",
+    "ground_truth_evidence": "By mapping text into continuous representations, semantic search overcomes the vocabulary mismatch limitation of lexical retrieval."
+  },
+  {
+    "id": "q3",
+    "question": "How does Reciprocal Rank Fusion calculate the score for a document?",
+    "relevant_doc": "04_hybrid_retrieval_and_fusion.txt",
+    "relevant_passage_ids": ["04_hybrid_retrieval_and_fusion.txt_p1"],
+    "relevant_keywords": ["reciprocal", "rank", "fusion", "rrf", "score"],
+    "ground_truth_answer": "Sum for each method m in M of 1.0 / (k_rrf + rank_m(d))",
+    "ground_truth_evidence": "For a document d appearing in rankings across retrieval methods M, the RRF score is computed as: RRF_Score(d) = Sum for each method m in M of 1.0 / (k_rrf + rank_m(d))"
+  },
+  {
+    "id": "q4",
+    "question": "Why is a two-stage retrieval pipeline used with cross-encoders?",
+    "relevant_doc": "05_cross_encoder_reranking.txt",
+    "relevant_passage_ids": ["05_cross_encoder_reranking.txt_p1"],
+    "relevant_keywords": ["two-stage", "cross-encoder", "computational", "complexity", "latency"],
+    "ground_truth_answer": "scoring millions of passages with a cross-encoder would result in unacceptable query latency",
+    "ground_truth_evidence": "Scoring millions of passages with a cross-encoder would result in unacceptable query latency. Therefore, modern IR architectures adopt a two-stage retrieval pipeline:"
+  },
+  {
+    "id": "q5",
+    "question": "What is the role of parameter k1 in BM25?",
+    "relevant_doc": "02_lexical_search_and_bm25.txt",
+    "relevant_passage_ids": ["02_lexical_search_and_bm25.txt_p0"],
+    "relevant_keywords": ["k1", "saturation", "term", "frequency", "bm25"],
+    "ground_truth_answer": "governs a non-linear term frequency saturation curve",
+    "ground_truth_evidence": "Unlike raw term frequency, which grows linearly, BM25 incorporates a non-linear saturation curve governed by the parameter k1 (typically between 1.2 and 2.0)."
+  },
+  {
+    "id": "q6",
+    "question": "What geometric metric is most commonly used for dense semantic retrieval?",
+    "relevant_doc": "03_dense_embeddings_and_semantic_search.txt",
+    "relevant_passage_ids": ["03_dense_embeddings_and_semantic_search.txt_p1"],
+    "relevant_keywords": ["cosine", "similarity", "geometric", "dense"],
+    "ground_truth_answer": "Cosine Similarity",
+    "ground_truth_evidence": "calculated using geometric distance or similarity metrics, most commonly Cosine Similarity: Cosine_Similarity(v_q, v_d) = (v_q . v_d) / (||v_q|| * ||v_d||)"
+  },
+  {
+    "id": "q7",
+    "question": "What does Mean Reciprocal Rank (MRR) evaluate?",
+    "relevant_doc": "01_information_retrieval_fundamentals.txt",
+    "relevant_passage_ids": ["01_information_retrieval_fundamentals.txt_p1"],
+    "relevant_keywords": ["mean", "reciprocal", "rank", "mrr", "first"],
+    "ground_truth_answer": "the reciprocal rank of the first relevant document across a set of queries",
+    "ground_truth_evidence": "Mean Reciprocal Rank (MRR): Evaluates the reciprocal rank of the first relevant document across a set of queries, reflecting how quickly a user finds their first useful answer."
+  },
+  {
+    "id": "q8",
+    "question": "What input format does a cross-encoder use to process a query and passage?",
+    "relevant_doc": "05_cross_encoder_reranking.txt",
+    "relevant_passage_ids": ["05_cross_encoder_reranking.txt_p0"],
+    "relevant_keywords": ["cls", "sep", "input", "cross-encoder", "concatenated"],
+    "ground_truth_answer": "[CLS] Query [SEP] Passage [SEP]",
+    "ground_truth_evidence": "In a cross-encoder architecture, the query and passage are concatenated into a single input sequence separated by special tokens: Input = [CLS] Query [SEP] Passage [SEP]"
+  },
+  {
+    "id": "q9",
+    "question": "How do extractive question answering models identify answers?",
+    "relevant_doc": "06_question_answering_and_rag.txt",
+    "relevant_passage_ids": ["06_question_answering_and_rag.txt_p0"],
+    "relevant_keywords": ["extractive", "start", "end", "token", "indices", "squad"],
+    "ground_truth_answer": "predict the exact start and end token indices within the passage that encompass the answer",
+    "ground_truth_evidence": "Extractive QA models (such as models trained on the Stanford Question Answering Dataset - SQuAD) take a question and a context passage as input and predict the exact start and end token indices within the passage that encompass the answer."
+  },
+  {
+    "id": "q10",
+    "question": "What should a QA system do when retrieval similarity scores are too low?",
+    "relevant_doc": "06_question_answering_and_rag.txt",
+    "relevant_passage_ids": ["06_question_answering_and_rag.txt_p1"],
+    "relevant_keywords": ["abstention", "insufficient", "evidence", "threshold", "hallucinations"],
+    "ground_truth_answer": "trigger an abstention policy and return insufficient evidence",
+    "ground_truth_evidence": "When retrieval similarity scores fall below calibrated thresholds, or when extractive QA confidence scores indicate low certainty, the system must trigger an abstention policy. Returning \"Insufficient evidence in the knowledge base to answer this question\" prevents misinformation and guarantees reliable factual accountability."
+  }
+]

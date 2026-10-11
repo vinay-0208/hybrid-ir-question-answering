@@ -1,0 +1,12 @@
+Question Answering, Evidence Selection, and Grounding
+
+Question Answering (QA) systems aim to extract or generate direct, concise answers to natural language questions based on reference documentation. QA systems typically fall into two categories: extractive question answering and generative question answering.
+
+1. Extractive Question Answering:
+Extractive QA models (such as models trained on the Stanford Question Answering Dataset - SQuAD) take a question and a context passage as input and predict the exact start and end token indices within the passage that encompass the answer. Models like distilbert-base-cased-distilled-squad output probability distributions over start and end tokens, enabling precise extraction of factual spans without introducing ungrounded hallucinations.
+
+2. Evidence Grounding and Selection:
+In retrieval-augmented question answering pipelines, retrieved passages often contain multiple sentences, only a subset of which directly answer the query. Evidence selection decomposes passages into candidate sentences and ranks them according to query relevance and answer containment. Grounding the final answer to an explicit evidence sentence provides verifiable citations, provenance, and auditability.
+
+3. Abstention and "Not Enough Evidence" Detection:
+A critical safety requirement in NLP question answering is avoiding confident hallucinations when the knowledge base lacks sufficient information. When retrieval similarity scores fall below calibrated thresholds, or when extractive QA confidence scores indicate low certainty, the system must trigger an abstention policy. Returning "Insufficient evidence in the knowledge base to answer this question" prevents misinformation and guarantees reliable factual accountability.
