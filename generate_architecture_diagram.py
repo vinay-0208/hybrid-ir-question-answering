@@ -22,9 +22,9 @@ def draw_architecture_diagram(output_paths):
         edgecolor="#1e3a8a", facecolor="#1e3a8a"
     )
     ax.add_patch(title_box)
-    ax.text(7.0, 9.47, "CSI4001: Hybrid Transformer-Based IR & QA System Architecture",
-            color="white", fontsize=15, weight="bold", ha="center", va="center")
-    ax.text(7.0, 9.22, "Student: Vinay Vishwanathan | Register No: 23MID0429 | Assessment: Case Study 1 (Q29)",
+    ax.text(7.0, 9.47, "CSI4001: Hybrid Transformer-Based Information Retrieval and Question Answering",
+            color="white", fontsize=14.5, weight="bold", ha="center", va="center")
+    ax.text(7.0, 9.22, "Student: Vinay Vishwanathan | Register No: 23MID0429 | Case Study: Case Study 2",
             color="#93c5fd", fontsize=10.5, ha="center", va="center")
 
     # Section 1: Offline Ingestion & Indexing Stage

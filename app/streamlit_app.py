@@ -1,10 +1,10 @@
 """
-Streamlit Web Application for CSI4001 Case Study 1:
+Streamlit Web Application for CSI4001 Case Study 2:
 Hybrid Transformer-Based Information Retrieval and Question Answering.
 
 Author: Vinay Vishwanathan (Register Number: 23MID0429)
 Course: CSI4001 - Natural Language Processing and Computational Linguistics
-Question Number: 29
+Case Study: Case Study 2
 """
 
 import os
@@ -45,13 +45,14 @@ engine: HybridQAEngine = st.session_state.engine
 
 # Sidebar Configuration
 with st.sidebar:
-    st.image("https://img.shields.io/badge/NLP_Case_Study_1-Question_29-blue?style=for-the-badge", use_container_width=True)
+    st.image("https://img.shields.io/badge/CSI4001_NLP-Case_Study_2-blue?style=for-the-badge", use_container_width=True)
     st.title("Project Details")
     st.markdown(
         """
         - **Student:** Vinay Vishwanathan
         - **Reg. No:** `23MID0429`
         - **Course:** CSI4001 NLP
+        - **Case Study:** Case Study 2
         - **Topic:** Hybrid IR & Question Answering
         """
     )
@@ -91,9 +92,9 @@ with st.sidebar:
 st.markdown(
     """
     <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); padding: 22px; border-radius: 12px; color: white; margin-bottom: 20px;">
-        <h2 style="margin: 0; padding: 0; color: white;">Hybrid Transformer-Based Information Retrieval & Question Answering</h2>
+        <h2 style="margin: 0; padding: 0; color: white;">Hybrid Transformer-Based Information Retrieval and Question Answering</h2>
         <p style="margin: 6px 0 0 0; font-size: 15px; opacity: 0.95;">
-            CSI4001: Natural Language Processing and Computational Linguistics | Case Study 1 (Question 29)<br>
+            CSI4001: Natural Language Processing and Computational Linguistics | Case Study 2<br>
             <strong>Vinay Vishwanathan &bull; Register Number: 23MID0429</strong>
         </p>
     </div>
@@ -518,7 +519,7 @@ with tab_eval:
             # Export evaluation report
             eval_json = json.dumps({
                 "student": "Vinay Vishwanathan (23MID0429)",
-                "course": "CSI4001 NLP Case Study 1",
+                "course": "CSI4001 NLP Case Study 2",
                 "k_threshold": k_eval,
                 "summary": summary_df.to_dict(orient="records"),
                 "details": eval_results["detailed_results"]
@@ -625,7 +626,7 @@ st.markdown("---")
 st.markdown(
     """
     <div style="text-align: center; color: #64748b; font-size: 13px;">
-        CSI4001 Natural Language Processing and Computational Linguistics &bull; Case Study 1 (Q29)<br>
+        CSI4001 Natural Language Processing and Computational Linguistics &bull; Case Study 2<br>
         Developed by <strong>Vinay Vishwanathan (23MID0429)</strong>
     </div>
     """,

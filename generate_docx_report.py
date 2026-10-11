@@ -69,7 +69,7 @@ def create_report():
     r_c1.bold = True
     r_c1.font.size = Pt(13)
     r_c1.font.color.rgb = RGBColor(0x11, 0x18, 0x27)
-    r_c2 = p_course.add_run("CASE STUDY 1 — QUESTION NUMBER 29")
+    r_c2 = p_course.add_run("CASE STUDY 2")
     r_c2.bold = True
     r_c2.font.size = Pt(12)
     r_c2.font.color.rgb = RGBColor(0x25, 0x63, 0xEB)
@@ -78,7 +78,7 @@ def create_report():
 
     p_title = doc.add_paragraph()
     p_title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r_title = p_title.add_run("IMPLEMENTATION REPORT\n\nHybrid Transformer-Based Information Retrieval\nand Question Answering System")
+    r_title = p_title.add_run("IMPLEMENTATION REPORT\n\nHybrid Transformer-Based Information Retrieval\nand Question Answering")
     r_title.bold = True
     r_title.font.size = Pt(18)
     r_title.font.color.rgb = RGBColor(0x1E, 0x3A, 0x8A)
@@ -93,8 +93,8 @@ def create_report():
     data = [
         ("Student Name", "Vinay Vishwanathan"),
         ("Register Number", "23MID0429"),
-        ("Course Code & Title", "CSI4001: Natural Language Processing"),
-        ("Assessment & Topic", "Case Study 1, Q29: Hybrid IR & Question Answering"),
+        ("Course Code & Title", "CSI4001: Natural Language Processing and Computational Linguistics"),
+        ("Case Study & Topic", "Case Study 2: Hybrid Transformer-Based Information Retrieval and Question Answering"),
         ("Submission Date", "October 2026")
     ]
 

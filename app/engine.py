@@ -30,9 +30,8 @@ class HybridQAEngine:
     REGISTER_NUMBER = "23MID0429"
     COURSE_CODE = "CSI4001"
     COURSE_NAME = "Natural Language Processing and Computational Linguistics"
-    ASSESSMENT = "Case Study 1"
-    QUESTION_NUMBER = 29
-    PROJECT_TOPIC = "Information Retrieval and Question Answering Using Transformer-Based Models"
+    ASSESSMENT = "Case Study 2"
+    PROJECT_TOPIC = "Hybrid Transformer-Based Information Retrieval and Question Answering"
 
     def __init__(self, sample_docs_dir: Optional[str] = None):
         self.repository = DocumentRepository(default_chunk_size=150, default_overlap=30)
@@ -108,7 +107,7 @@ class HybridQAEngine:
                 "name": self.STUDENT_NAME,
                 "reg_no": self.REGISTER_NUMBER,
                 "course": f"{self.COURSE_CODE} - {self.COURSE_NAME}",
-                "assessment": f"{self.ASSESSMENT}, Q{self.QUESTION_NUMBER}",
+                "assessment": self.ASSESSMENT,
                 "topic": self.PROJECT_TOPIC
             },
             "device": device_name,

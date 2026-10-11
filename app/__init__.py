@@ -1,7 +1,7 @@
 """
-Hybrid Information Retrieval and Question Answering System.
+Hybrid Transformer-Based Information Retrieval and Question Answering.
 Course: CSI4001 - Natural Language Processing and Computational Linguistics
-Assessment: Case Study 1, Question 29
+Case Study: Case Study 2
 Student: Vinay Vishwanathan (Register Number: 23MID0429)
 """
 
