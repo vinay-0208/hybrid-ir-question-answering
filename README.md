@@ -1,7 +1,7 @@
 # Hybrid Transformer-Based Information Retrieval and Question Answering System
 
 **Course:** CSI4001 — Natural Language Processing and Computational Linguistics  
-**Assessment:** Case Study 1 (Question 29)  
+**Assessment:** Case Study 2 (Question 29)  
 **Author:** Vinay Vishwanathan  
 **Register Number:** 23MID0429  
 **Repository URL:** [https://github.com/vinay-0208/hybrid-ir-question-answering](https://github.com/vinay-0208/hybrid-ir-question-answering)
